@@ -7,6 +7,7 @@
    <title>Index</title>
 </head>
 <body>
-   
+   <h1>Trang chủ</h1>
+   <a href="login.php">Login</a>
 </body>
 </html>
