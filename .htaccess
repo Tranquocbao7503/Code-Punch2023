@@ -1,0 +1,44 @@
+# Disable directory listing
+Options -Indexes
+
+# Prevent file access
+<FilesMatch "^.*\.(php5|pl|py|jsp|asp|htm|shtml|sh|cgi)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+# 
+<Files connect.php>
+    Order deny,allow
+    Deny from all
+</Files>
+
+# Set secure permissions for .htaccess
+<Files .htaccess>
+    Require all denied
+</Files>
+
+# Disable server-side includes
+Options -Includes
+
+# Enable strict MIME type checking
+<IfModule mod_mime.c>
+    AddType application/octet-stream .php
+    AddType application/octet-stream .html
+    AddType application/octet-stream .htm
+    AddType application/octet-stream .txt
+</IfModule>
+
+# Disable server signature
+ServerSignature Off
+
+# Prevent access to sensitive files and directories
+<FilesMatch "(^\.|wp-config\.php|php\.ini|\.htaccess|readme\.html|LICENSE|wp-admin)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Prevent script execution in certain directories
+<FilesMatch "(wp-content/uploads|wp-includes/.*\.php)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
