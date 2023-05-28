@@ -24,7 +24,8 @@ if (isset($_POST['login'])) {
             // Đăng nhập thành công, tạo session và chuyển hướng đến wellcome.php
             session_start();
             $_SESSION['username'] = $username;
-            header("Location: welcome.php");
+            // require_once('../Class/homepage.php');
+            require_once($_SERVER['DOCUMENT_ROOT'] . '/Code-Punch2023/Class/homepage.php');
             exit();
         } else {
             echo "Mật khẩu không chính xác.";
@@ -54,7 +55,7 @@ if (isset($_POST['login'])) {
         <input type="text" name="username" required><br><br>
         <label>Mật khẩu:</label>
         <input type="password" name="password" required><br><br>
-        <input type="submit" value="Đăng nhập">
+        <input type="submit" name="login" value="Đăng nhập">
     </form>
 </body>
 

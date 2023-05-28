@@ -1,6 +1,6 @@
 <?php
 
-require_once("connection.php");
+require_once("connect.php");
 
 
 if (isset($_POST["submit"])) {
@@ -24,7 +24,7 @@ if (isset($_POST["submit"])) {
 
         // thực thi câu sql với biến con lấy từ file connection.php
         try {
-            mysqli_query($connection, $sql);
+            mysqli_query($conn, $sql);
             echo "Signing up successfully";
         } catch (mysqli_sql_exception $e) {
             $errorMessage = $e->getMessage();
