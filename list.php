@@ -7,15 +7,26 @@ $sql = "SELECT id, username FROM users";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-   // In danh sách các username và tạo liên kết đến profile.php
-   echo "<ul>";
+   // Tạo bảng và tiêu đề cột
+   echo "<table>";
+   echo "<tr><th>Số thứ tự</th><th>Username</th></tr>";
+
+   // Lặp qua từng dòng kết quả
+   $count = 1;
    while ($row = $result->fetch_assoc()) {
       $id = $row["id"];
       $username = $row["username"];
-      $profileLink = "profile.php?id=" . $id;
-      echo "<li><a href=\"$profileLink\">$username</a></li>";
+
+      // Hiển thị dữ liệu trong từng ô
+      echo "<tr>";
+      echo "<td>$count</td>";
+      echo "<td><a href=\"profile.php?id=$id\">$username</a></td>";
+      echo "</tr>";
+
+      $count++;
    }
-   echo "</ul>";
+
+   echo "</table>";
 } else {
    echo "Không có dữ liệu.";
 }
