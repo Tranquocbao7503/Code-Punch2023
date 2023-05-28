@@ -25,7 +25,7 @@ if (isset($_POST['login'])) {
             session_start();
             $_SESSION['username'] = $username;
             // require_once('../Class/homepage.php');
-            require_once($_SERVER['DOCUMENT_ROOT'] . '/homepage.php');
+            require_once($_SERVER['DOCUMENT_ROOT'] . '/Code-Punch2023/Class/homepage.php');
             exit();
         } else {
             echo "Mật khẩu không chính xác.";
