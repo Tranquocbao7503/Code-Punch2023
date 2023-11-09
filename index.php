@@ -10,8 +10,8 @@
 
 <body>
    <h1>Trang chủ</h1>
-   <a href="Includes/login.php">Login</a>
-   <a href="Includes/signup.php">Signup </a>
+   <a href="login.php">Login</a>
+   <a href="signup.php">Signup </a>
 </body>
 
 </html>

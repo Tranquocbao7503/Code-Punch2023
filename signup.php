@@ -26,6 +26,7 @@ if (isset($_POST["submit"])) {
         try {
             mysqli_query($conn, $sql);
             echo "Signing up successfully";
+            header("Location: /Code-Punch2023/homepage.php"); //fix this line, wrong link
         } catch (mysqli_sql_exception $e) {
             $errorMessage = $e->getMessage();
             if (strpos($errorMessage, "Duplicate entry") !== false) {

@@ -10,6 +10,8 @@
 
 <body>
     <h1> You're welcome </h1>
+
+    <a href="list.php">Go to list</a>
 </body>
 
 </html>
